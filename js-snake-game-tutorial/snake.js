@@ -28,8 +28,19 @@ var moveSnake = function(snake) {
   });
 }
 
+var growSnake = function(snake) {
+  var indexOfLastSegment = snake.length - 1;
+  var lastSegment = snake[snake.length - 1];
+  snake.push({ top: lastSegment.top, left: lastSegment.left });
+  return snake;
+}
+
 var advanceGame = function() {
   snake = moveSnake(snake);
+  if (CHUNK.detectCollisionBetween([apple], snake)) {
+    snake = growSnake(snake);
+    apple = CHUNK.randomLocation();
+  }
   if (CHUNK.detectCollisionBetween(snake, CHUNK.gameBoundaries())) {
     CHUNK.endGame();
     CHUNK.flashMessage("Woops! you hit a wall!");
