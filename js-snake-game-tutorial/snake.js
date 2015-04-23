@@ -29,6 +29,10 @@ var moveSnake = function(snake) {
 
 var advanceGame = function() {
   snake = moveSnake(snake);
+  if (CHUNK.detectCollisionBetween(snake, CHUNK.gameBoundaries())) {
+    CHUNK.endGame();
+    CHUNK.flashMessage("Woops! you hit a wall!");
+  }
   drawSnake(snake);
 }
 
@@ -38,3 +42,4 @@ var changeDirection = function(direction) {
 
 var snake = [{ top: 0, left: 0}];
 CHUNK.executeNTimesPerSecond(advanceGame, 1);
+CHUNK.onArrowKey(changeDirection);
