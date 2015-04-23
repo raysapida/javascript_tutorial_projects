@@ -20,10 +20,12 @@ var moveSegment = function(segment) {
 }
 
 var moveSnake = function(snake) {
-  var oldSegment = snake[0];
-  var newSegment = moveSegment(oldSegment);
-  newSegment.direction = oldSegment.direction;
-  var newSnake = [newSegment];
+  var newSnake = [];
+  snake.forEach(function(oldSegment) {
+    var newSegment = moveSegment(oldSegment);
+    newSegment.direction = oldSegment.direction;
+    newSnake.push(newSegment);
+  });
   return newSnake;
 }
 
@@ -40,6 +42,6 @@ var changeDirection = function(direction) {
   snake[0].direction = direction;
 }
 
-var snake = [{ top: 0, left: 0}];
+var snake = [{ top: 1, left: 0, direction: "down" }, { top: 0, left: 0, direction: "down" }];
 CHUNK.executeNTimesPerSecond(advanceGame, 1);
 CHUNK.onArrowKey(changeDirection);
