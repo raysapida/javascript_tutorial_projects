@@ -1,6 +1,7 @@
-var drawSnake = function(snakeToDraw) {
+var draw = function(snakeToDraw, apple) {
   var drawableSnake = { color: "green", pixels: snakeToDraw };
-  var drawableObjects = [drawableSnake];
+  var drawableApple = { color: "red", pixels: [apple] };
+  var drawableObjects = [drawableSnake, drawableApple];
   CHUNK.draw(drawableObjects);
 }
 
@@ -33,7 +34,7 @@ var advanceGame = function() {
     CHUNK.endGame();
     CHUNK.flashMessage("Woops! you hit a wall!");
   }
-  drawSnake(snake);
+  draw(snake, apple);
 }
 
 var changeDirection = function(direction) {
@@ -47,6 +48,8 @@ var segmentFurtherForwardThan = function(index, snake) {
     return snake[index - 1];
   }
 }
+
+var apple = { top: 8, left: 10 };
 
 var snake = [{ top: 1, left: 0, direction: "down" }, { top: 0, left: 0, direction: "down" }];
 CHUNK.executeNTimesPerSecond(advanceGame, 1);
