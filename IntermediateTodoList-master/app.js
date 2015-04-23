@@ -23,3 +23,17 @@ loadRequest.done(function(dataFromServer) {
     addItemToPage(itemData)
   })
 })
+
+$('#add-form').on('submit', function(event) {
+  event.preventDefault()
+  var itemDescription = event.target.itemDescription.value
+  var creationRequest = $.ajax({
+    type: 'POST',
+    url: "https://listalous.herokuapp.com/lists/playing-cards/items",
+    data: { description: itemDescription, completed: false }
+  })
+
+  creationRequest.done(function(itemDataFromServer) {
+    addItemToPage(itemDataFromServer)
+  })
+})
