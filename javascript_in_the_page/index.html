@@ -7,15 +7,6 @@
     <h1>Learning Javascript</h1>
     <canvas id='drawing' width="600" height="400"></canvas>
     <script>
-      function pie(progress, value) {
-        context.beginPath();
-        context.fillStyle = "hsl("+(progress * 360)+", 80%, 60%)";
-        context.moveTo(150, 150);
-        context.arc(150, 150, 100, progress*2*Math.PI,
-            (progress+value)*2*Math.PI);
-        context.fill();
-      }
-
       function line(x, y) {
         context.strokeStyle = "hsl(40, 80%, 60%)";
         context.lineWidth = 1.5;
