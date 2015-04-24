@@ -13,6 +13,17 @@
 
       output("Hello friend");
       output("Hello enemy");
+      var data = [4, 2, 9, 7];
+
+      data.forEach(function (datum) {
+        var number = datum;
+        var message = "";
+        while (number > 0) {
+          message += "|";
+          number--;
+        }
+        output(message);
+      });
     </script>
   </body>
 </html>
