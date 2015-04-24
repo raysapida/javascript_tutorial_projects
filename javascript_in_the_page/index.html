@@ -83,10 +83,26 @@
         context.fillText(message, x, y);
       };
 
+      function BarChart(context, data) {
+          this.context = context;
+          this.data = data;
+      }
+
+      BarChart.prototype = {
+        rectangle: Chart.prototype.rectangle,
+        bar: function(x, y) {
+          this.rectangle("rgb(64, 64, 128)", 0, x * 12, y * 10, 10);
+        },
+        draw: function() {
+          this.data.forEach(function (datum, index) {
+            this.bar(index, datum);
+          }.bind(this));
+        }
+      }
+
       var context = document.getElementById('drawing').getContext('2d');
-      var chart = new Chart(context);
-      chart.rectangle('red', 0, 0, 300, 200);
-      chart.text("Hello","FF0000", 50, 50);
+      var barChart = new BarChart(context, [4, 8, 12, 1, 7]);
+      barChart.draw();
     </script>
   </body>
 </html>
