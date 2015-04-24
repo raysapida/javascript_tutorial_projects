@@ -7,10 +7,16 @@
     <h1>Learning Javascript</h1>
     <canvas id='drawing' width="600" height="400"></canvas>
     <script>
+      var context;
+      function rectangle(color, x, y, width, height) {
+        context.fillStyle = color;
+        context.fillRect(x, y, width, height);
+      }
+
       var canvas = document.getElementById("drawing");
-      var context = canvas.getContext("2d");
-      context.fillStyle = "#333333";
-      context.fillRect(0, 0, 300, 200);
+      context = canvas.getContext("2d");
+      rectangle("#333333", 0, 0, 300, 200);
+      rectangle("#999999", 100, 100, 300, 200);
     </script>
   </body>
 </html>
