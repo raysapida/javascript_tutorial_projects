@@ -60,13 +60,19 @@
 
       function Programmer(name, language) {
           this.name = name;
-            this.language = language;
+          this.language = language;
       }
 
       Programmer.prototype = new Person();
 
       var jane = new Programmer('Jane', 'JavaScript');
       jane.sayHello();
+
+      Programmer.prototype.sayLanguage = function () {
+          alert('I like to program in ' + this.language + '.');
+      };
+
+      jane.sayLanguage();
     </script>
   </body>
 </html>
