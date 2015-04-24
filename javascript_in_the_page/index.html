@@ -6,14 +6,18 @@
   <body>
     <h1>Learning Javascript</h1>
     <script type='text/javascript'>
+      var name = 'Ray';
       function message(name) {
-        var name = 'Ray';
-        return 'hey there, ' + name + '!';
+        if (name === 'Ray') {
+          return 'hey buddy!';
+        } else {
+          return 'do I know you?';
+        }
       }
       function sayHello() {
-        alert(message());
+        alert(message(name));
         name = 'Raymond';
-        alert(message());
+        alert(message(name));
       }
       sayHello();
     </script>
