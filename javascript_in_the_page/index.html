@@ -57,6 +57,16 @@
 
       var ray = new Person('Ray');
       ray.sayHello();
+
+      function Programmer(name, language) {
+          this.name = name;
+            this.language = language;
+      }
+
+      Programmer.prototype = new Person();
+
+      var jane = new Programmer('Jane', 'JavaScript');
+      jane.sayHello();
     </script>
   </body>
 </html>
