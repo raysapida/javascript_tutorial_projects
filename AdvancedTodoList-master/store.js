@@ -27,6 +27,17 @@ ListStore = {
       notifyComponents()
     })
   },
-  addItem: function(itemDescription) {},
+  addItem: function(itemDescription) {
+    var creationRequest = $.ajax({
+      type: 'POST',
+      url: "http://listalous.herokuapp.com/lists/playing-cards/items",
+      data: { description: itemDescription, completed: false }
+    })
+
+    creationRequest.done(function(itemDataFromServer) {
+      items.push(itemDataFromServer)
+      notifyComponents()
+    })
+  },
   toggleCompleteness: function(itemId) {}
 }
