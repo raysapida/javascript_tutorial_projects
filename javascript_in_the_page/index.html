@@ -39,14 +39,6 @@
         context.stroke();
       }
 
-      var canvas = document.getElementById("drawing");
-      context = canvas.getContext("2d");
-      var data = [4,7,2,4,11];
-
-      data.forEach(function (datum, index) {
-        line(index, datum);
-      });
-
       function Person(name) {
           this.name = name;
       }
@@ -73,6 +65,21 @@
       };
 
       jane.sayLanguage();
+
+      function Chart(context) {
+          this.context = context;
+      }
+
+      Chart.prototype = {
+        rectangle: function(color, x, y, width, height) {
+                     this.context.fillStyle = color;
+                     this.context.fillRect(x, y, width, height);
+                   }
+      }
+
+      var context = document.getElementById('drawing').getContext('2d');
+      var chart = new Chart(context);
+      chart.rectangle('red', 0, 0, 300, 200);
     </script>
   </body>
 </html>
