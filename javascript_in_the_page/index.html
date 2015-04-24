@@ -25,9 +25,12 @@
 
       var canvas = document.getElementById("drawing");
       context = canvas.getContext("2d");
-      bar(0, 10);
-      bar(1, 15);
-      bar(2, 8);
+
+      var data = [4, 9, 12, 16, 2, 8];
+
+      data.forEach(function (datum, index) {
+        bar(index, datum);
+      });
     </script>
   </body>
 </html>
