@@ -48,5 +48,10 @@ ListStore = {
       url: "https://listalous.herokuapp.com/lists/playing-cards/items/" + itemId,
       data: { completed: !currentCompletedValue }
     })
+
+    updateRequest.done(function(itemData) {
+      item.completed = itemData.completed
+      notifyComponents()
+    })
   }
 }
