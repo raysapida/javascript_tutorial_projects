@@ -50,7 +50,7 @@
       },
 
       handleComplete: function() {
-        alert('trying to update item with an id of ' + this.props.id)
+        ListStore.toggleCompleteness(this.props.id)
       }
     })
 
