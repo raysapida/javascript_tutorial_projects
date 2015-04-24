@@ -9,3 +9,5 @@
   Basics](http://tutorials.jumpstartlab.com/projects/javascript/introduction/4-canvas-basics.html)
 * [JS Data Driven
   Canvas](http://tutorials.jumpstartlab.com/projects/javascript/introduction/5-data-driven-canvas.html)
+* [Object-Ortiented
+  JS](http://tutorials.jumpstartlab.com/projects/javascript/introduction/6-object-oriented-javascript.html)
