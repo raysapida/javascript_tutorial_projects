@@ -23,13 +23,23 @@
         rectangle("rgb(64, 64, 128)", 0, x*12, y*10, 10);
       }
 
+      function pie(progress, value) {
+        context.beginPath();
+        context.fillStyle = "hsl("+(progress * 360)+", 80%, 60%)";
+        context.moveTo(150, 150);
+        context.arc(150, 150, 100, progress*2*Math.PI,
+            (progress+value)*2*Math.PI);
+        context.fill();
+      }
+
       var canvas = document.getElementById("drawing");
       context = canvas.getContext("2d");
+      var data = [0.1, 0.1, 0.5, 0.3];
+      var progress = 0;
 
-      var data = [4, 9, 12, 16, 2, 8];
-
-      data.forEach(function (datum, index) {
-        bar(index, datum);
+      data.forEach(function (datum) {
+        pie(progress, datum);
+        progress += datum;
       });
     </script>
   </body>
