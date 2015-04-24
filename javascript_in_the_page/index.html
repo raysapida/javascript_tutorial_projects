@@ -77,9 +77,16 @@
                    }
       }
 
+      Chart.prototype.text = function (message, color, x, y) {
+        context.fillStyle = color;
+        context.font = "30px sans-serif";
+        context.fillText(message, x, y);
+      };
+
       var context = document.getElementById('drawing').getContext('2d');
       var chart = new Chart(context);
       chart.rectangle('red', 0, 0, 300, 200);
+      chart.text("Hello","FF0000", 50, 50);
     </script>
   </body>
 </html>
