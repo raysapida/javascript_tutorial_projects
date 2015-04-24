@@ -13,10 +13,17 @@
         context.fillRect(x, y, width, height);
       }
 
+      function text(message, color, x, y) {
+        context.fillStyle = color;
+        context.font = "30px sans-serif";
+        context.fillText(message, x, y);
+      }
+
       var canvas = document.getElementById("drawing");
       context = canvas.getContext("2d");
       rectangle("#333333", 0, 0, 300, 200);
       rectangle("#999999", 100, 100, 300, 200);
+      text("Hello World", "FF0000", 50, 50);
     </script>
   </body>
 </html>
