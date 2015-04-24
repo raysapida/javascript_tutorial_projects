@@ -39,32 +39,6 @@
         context.stroke();
       }
 
-      function Person(name) {
-          this.name = name;
-      }
-
-      Person.prototype.sayHello = function () {
-          alert("Hello, I am " + this.name + ".");
-      };
-
-      var ray = new Person('Ray');
-      ray.sayHello();
-
-      function Programmer(name, language) {
-          this.name = name;
-          this.language = language;
-      }
-
-      Programmer.prototype = new Person();
-
-      var jane = new Programmer('Jane', 'JavaScript');
-      jane.sayHello();
-
-      Programmer.prototype.sayLanguage = function () {
-          alert('I like to program in ' + this.language + '.');
-      };
-
-      jane.sayLanguage();
 
       function Chart(context) {
           this.context = context;
