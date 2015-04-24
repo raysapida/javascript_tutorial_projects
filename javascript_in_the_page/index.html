@@ -6,7 +6,16 @@
   <body>
     <h1>Learning Javascript</h1>
     <script type='text/javascript'>
-      alert('hello, world!');
+      function message(name) {
+        var name = 'Ray';
+        return 'hey there, ' + name + '!';
+      }
+      function sayHello() {
+        alert(message());
+        name = 'Raymond';
+        alert(message());
+      }
+      sayHello();
     </script>
   </body>
 </html>
