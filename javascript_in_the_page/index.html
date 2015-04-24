@@ -7,22 +7,6 @@
     <h1>Learning Javascript</h1>
     <canvas id='drawing' width="600" height="400"></canvas>
     <script>
-      var context;
-      function rectangle(color, x, y, width, height) {
-        context.fillStyle = color;
-        context.fillRect(x, y, width, height);
-      }
-
-      function text(message, color, x, y) {
-        context.fillStyle = color;
-        context.font = "30px sans-serif";
-        context.fillText(message, x, y);
-      }
-
-      function bar(x, y) {
-        rectangle("rgb(64, 64, 128)", 0, x*12, y*10, 10);
-      }
-
       function pie(progress, value) {
         context.beginPath();
         context.fillStyle = "hsl("+(progress * 360)+", 80%, 60%)";
