@@ -58,9 +58,31 @@
         }
       }
 
+      function PieChart(context, data) {
+          this.context = context;
+          this.data = data;
+      }
+
+      PieChart.prototype = {
+        pie: function(progress, value) {
+                this.context.beginPath();
+                this.context.fillStyle = "hsl("+(progress * 360)+", 80%, 60%)";
+                this.context.moveTo(150, 150);
+                this. context.arc(150, 150, 100, progress*2*Math.PI,
+                    (progress+value)*2*Math.PI);
+                this.context.fill();
+              },
+        draw: function() {
+                var progress = 0;
+                this.data.forEach(function (datum) {
+                    this.pie(progress, datum);
+                    progress += datum;
+              }
+      }
+
       var context = document.getElementById('drawing').getContext('2d');
-      var barChart = new BarChart(context, [4, 8, 12, 1, 7]);
-      barChart.draw();
+      var pieChart = new PieChart(context, [0.1, 0.1, 0.5, 0.3]);
+      pieChart.draw();
     </script>
   </body>
 </html>
