@@ -5,25 +5,12 @@
   </head>
   <body>
     <h1>Learning Javascript</h1>
-    <pre id='output'></pre>
+    <canvas id='drawing' width="600" height="400"></canvas>
     <script>
-      function output(message) {
-        document.getElementById('output').innerHTML  += message + '<br>';
-      }
-
-      output("Hello friend");
-      output("Hello enemy");
-      var data = [4, 2, 9, 7];
-
-      data.forEach(function (datum) {
-        var number = datum;
-        var message = "";
-        while (number > 0) {
-          message += "|";
-          number--;
-        }
-        output(message);
-      });
+      var canvas = document.getElementById("drawing");
+      var context = canvas.getContext("2d");
+      context.fillStyle = "#333333";
+      context.fillRect(0, 0, 300, 200);
     </script>
   </body>
 </html>

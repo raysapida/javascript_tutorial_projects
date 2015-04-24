@@ -5,3 +5,5 @@
   Basics](http://tutorials.jumpstartlab.com/projects/javascript/introduction/2-javascript-basics.html)
 * [JS DOM
   Basics](http://tutorials.jumpstartlab.com/projects/javascript/introduction/3-dom-basics.html)
+* [JS Canvas
+  Basics](http://tutorials.jumpstartlab.com/projects/javascript/introduction/4-canvas-basics.html)
