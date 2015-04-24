@@ -71,9 +71,28 @@
               }
       }
 
+      function LineChart(context, data) {
+          this.context = context;
+          this.data = data;
+      }
+
+      LineChart.prototype = {
+        line: function(x, y) {
+                this.context.strokeStyle = "hsl(40, 80%, 60%)";
+                this.context.lineWidth = 1.5;
+                this.context.lineTo(x*50, 100-y*10);
+                this.context.stroke();
+              },
+        draw: function() {
+                this.data.forEach(function (datum, index) {
+                  this.line(index, datum);
+                }
+              }
+      }
+
       var context = document.getElementById('drawing').getContext('2d');
-      var pieChart = new PieChart(context, [0.1, 0.1, 0.5, 0.3]);
-      pieChart.draw();
+      var lineChart = new LineChart(context, [4,7,2,4,11]);
+      lineChart.draw();
     </script>
   </body>
 </html>
