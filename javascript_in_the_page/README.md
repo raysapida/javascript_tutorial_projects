@@ -7,3 +7,5 @@
   Basics](http://tutorials.jumpstartlab.com/projects/javascript/introduction/3-dom-basics.html)
 * [JS Canvas
   Basics](http://tutorials.jumpstartlab.com/projects/javascript/introduction/4-canvas-basics.html)
+* [JS Data Driven
+  Canvas](http://tutorials.jumpstartlab.com/projects/javascript/introduction/5-data-driven-canvas.html)

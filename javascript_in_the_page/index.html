@@ -19,11 +19,15 @@
         context.fillText(message, x, y);
       }
 
+      function bar(x, y) {
+        rectangle("rgb(64, 64, 128)", 0, x*12, y*10, 10);
+      }
+
       var canvas = document.getElementById("drawing");
       context = canvas.getContext("2d");
-      rectangle("#333333", 0, 0, 300, 200);
-      rectangle("#999999", 100, 100, 300, 200);
-      text("Hello World", "FF0000", 50, 50);
+      bar(0, 10);
+      bar(1, 15);
+      bar(2, 8);
     </script>
   </body>
 </html>
