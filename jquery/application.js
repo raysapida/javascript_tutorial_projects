@@ -8,6 +8,8 @@ $(function (){
   $("div.article h2").css("background-color","#CCF")
   $("div.article h2").each(function (){
     var title = $(this).text();
+    var slug = title.trim().toLowerCase().replace(" ", "_");
+    $(this).attr('id', slug);
     var listItem = "<li>" + title + "</li>";
     $("ul").append(listItem);
   });
