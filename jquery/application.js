@@ -13,5 +13,12 @@ $(function (){
     var listLink = "<a href="+"'#"+slug+"'>"+title+"</a>"
     var listItem = "<li>" + listLink + "</li>";
     $("ul").append(listItem);
+
+    var toggleLink = $("<a href=''>(hide)</a>");
+    toggleLink.on('click', function (event){
+      $(this).siblings('p').toggle();
+    });
+    $(this).after(toggleLink);
+
   });
 });
