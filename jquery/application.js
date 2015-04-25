@@ -1,3 +1,4 @@
 $(function (){
-  $('h1.target').text("Hello, World! jQuery Rocks!");
+  var backToTop = "<a href='#top'>Back to Top</a>";
+  $("div.article").append(backToTop);
 });
