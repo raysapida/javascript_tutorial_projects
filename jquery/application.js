@@ -10,7 +10,8 @@ $(function (){
     var title = $(this).text();
     var slug = title.trim().toLowerCase().replace(" ", "_");
     $(this).attr('id', slug);
-    var listItem = "<li>" + title + "</li>";
+    var listLink = "<a href="+"'#"+slug+"'>"+title+"</a>"
+    var listItem = "<li>" + listLink + "</li>";
     $("ul").append(listItem);
   });
 });
