@@ -6,4 +6,9 @@ $(function (){
   $("h1").after(toc);
   $("h2:first").after(list);
   $("div.article h2").css("background-color","#CCF")
+  $("div.article h2").each(function (){
+    var title = $(this).text();
+    var listItem = "<li>" + title + "</li>";
+    $("ul").append(listItem);
+  });
 });
