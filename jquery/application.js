@@ -16,6 +16,7 @@ $(function (){
 
     var toggleLink = $("<a href=''>(hide)</a>");
     toggleLink.on('click', function (event){
+      event.preventDefault();
       var oldText = $(this).text();
       var newText = (oldText === '(hide)') ? '(show)' : '(hide)';
       toggleLink.text(newText);
