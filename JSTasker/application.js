@@ -1,6 +1,10 @@
 function updateTaskCounter(){
   var task_count = $('div#tasks ul').children().not('li.completed').size();
   $('span#task_counter').text(task_count);
+  sortTasks();
+}
+function sortTasks(){
+  alert("Sorting the Tasks!");
 }
 $(function(){
   $('input#task_text').focus();
