@@ -5,6 +5,8 @@ $(function(){
   inventory.each(function(){
     var item = prototypeItem.clone();
     item.find('h3').text(this.name);
+    item.find('span#price').text(this.price);
+    item.find('span#qty').text(this.stock);
     $('#inventory').append(item);
   });
 });
