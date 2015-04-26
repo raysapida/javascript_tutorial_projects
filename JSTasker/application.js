@@ -1,3 +1,7 @@
+function updateTaskCounter(){
+  var task_count = $('ul').children().size();
+  $('span#task_counter').text(task_count);
+}
 $(function(){
   $('input#task_text').focus();
   $('form#add_task').on('submit', function(event){
@@ -9,5 +13,6 @@ $(function(){
     $('ul li').on('click', function(event){
       $(this).toggleClass('completed');
     });
+    updateTaskCounter();
   });
 });
