@@ -3,6 +3,8 @@ $(function(){
   var prototypeItem = $('#prototype-item');
   prototypeItem.detach();
   inventory.each(function(){
-    alert("Inserting " + this.name);
+    var item = prototypeItem.clone();
+    item.find('h3').text(this.name);
+    $('#inventory').append(item);
   });
 });
