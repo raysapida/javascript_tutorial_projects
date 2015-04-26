@@ -6,5 +6,8 @@ $(function(){
     var listText = "<li>"+taskText+"</li>";
     $('div#tasks ul').append(listText);
     $('input#task_text').val('');
+    $('ul li').on('click', function(event){
+      $(this).addClass('completed');
+    });
   });
 });
