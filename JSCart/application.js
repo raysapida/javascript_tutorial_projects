@@ -9,5 +9,8 @@ $(function(){
     item.find('span#qty').text(this.stock);
     item.find('div').attr("id",this.product_id);
     $('#inventory').append(item);
+    item.on('click', function () {
+      alert("Adding " + $(this).attr('id') + " to the cart." );
+    });
   });
 });
