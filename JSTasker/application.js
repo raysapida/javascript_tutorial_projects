@@ -4,5 +4,6 @@ $(function(){
     var taskText = $('input#task_text').val();
     var listText = "<li>"+taskText+"</li>";
     $('div#tasks ul').append(listText);
+    $('input#task_text').val('');
   });
 });
