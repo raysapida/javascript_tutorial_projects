@@ -1,4 +1,5 @@
 $(function(){
   var inventory = $(rawInventory);
-  alert("There are " + inventory.length + " products in the inventory.");
+  var prototypeItem = $('#prototype-item');
+  prototypeItem.detach();
 });
