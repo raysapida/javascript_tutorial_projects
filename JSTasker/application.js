@@ -1,5 +1,5 @@
 function updateTaskCounter(){
-  var task_count = $('ul').children().size();
+  var task_count = $('div#tasks ul').children().not('li.completed').size();
   $('span#task_counter').text(task_count);
 }
 $(function(){
@@ -12,6 +12,7 @@ $(function(){
     $('input#task_text').val('');
     $('ul li').on('click', function(event){
       $(this).toggleClass('completed');
+      updateTaskCounter();
     });
     updateTaskCounter();
   });
