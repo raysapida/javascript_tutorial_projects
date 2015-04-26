@@ -4,7 +4,8 @@ function updateTaskCounter(){
   sortTasks();
 }
 function sortTasks(){
-  alert("Sorting the Tasks!");
+  var taskList = $('div#tasks ul');
+  var allCompleted = taskList.childen('li.completed');
 }
 $(function(){
   $('input#task_text').focus();
