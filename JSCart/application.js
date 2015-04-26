@@ -7,6 +7,7 @@ $(function(){
     item.find('h3').text(this.name);
     item.find('span#price').text(this.price);
     item.find('span#qty').text(this.stock);
+    item.find('div').attr("id",this.product_id);
     $('#inventory').append(item);
   });
 });
