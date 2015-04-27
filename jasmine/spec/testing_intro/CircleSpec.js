@@ -11,7 +11,9 @@ describe("Circle", function() {
   });
 
   it("should draw on the canvas", function() {
-    var context = hmmmm; // ???
+    var context = jasmine.createSpyObj('context', ['arc', 'stroke']);
     circle.draw(context);
+    expect(context.arc).toHaveBeenCalledWith(47, 32, 10, 0, 2*Math.PI)
+    expect(context.stroke).toHaveBeenCalled();
   });
 });
