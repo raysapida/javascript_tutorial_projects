@@ -1,0 +1,9 @@
+<p>{{#link-to 'users' }}back{{/link-to}} to Users</p>
+<form {{action 'saveUser' model on='submit' }} >
+  <p>First Name: {{input value=model.firstName}}</p>
+  <p>Last Name: {{input value=model.lastName}}</p>
+  <p>Address: {{input value=model.addressLine}}</p>
+  <p>Postcode: {{input value=model.postCode}}</p>
+  <p>Country: {{input value=model.country}}</p>
+  <p><input type="submit" value="Save" ></p>
+</form>
