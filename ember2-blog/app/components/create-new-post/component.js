@@ -3,7 +3,7 @@ import Ember from 'ember';
 export default Ember.Component.extend({
   actions: {
     createPost: function () {
-      console.log("createPost function called");
+      console.log(newPost.title, newPost.author);
     }
   }
 });
